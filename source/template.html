@@ -1,0 +1,51 @@
+<div class="label default-question-text-size" dir="auto">{{{LABEL}}}</div>
+
+<!-- If there is an image specified in the media:image column, show it here -->
+{{#MEDIAIMAGE}}
+<img src="{{MEDIAIMAGE}}" />
+{{/MEDIAIMAGE}}
+
+<!-- If there is audio specified in the media:audio column, show it here -->
+{{#MEDIAAUDIO}}
+<audio controls controlsList="nodownload">
+  <source src="{{MEDIAAUDIO}}">
+  Your browser does not support the audio element.
+</audio>
+{{/MEDIAAUDIO}}
+
+<!-- If there is a video specified in the media:video column, show it here -->
+{{#MEDIAVIDEO}}
+<video width="100%" height="*" controls controlsList="nodownload">
+  <source src="{{MEDIAVIDEO}}">
+  Your browser does not support the video tag.
+</video>
+{{/MEDIAVIDEO}}
+
+<div class="hint default-hint-text-size" dir="auto">{{{HINT}}}</div>
+
+<center>
+  <table id="conjoint_table_1" class="conjoint-table">
+    <tr>
+      <th style="width:20%"></th>
+      <th id="header1" style="width:40%"><b></b></th>
+      <th id="header2" style="width:40%"><b></b></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th id="header1"><b></b></th>
+      <th id="header2"><b></b></th>
+    </tr>
+  </table>
+  <br>
+  <div>
+    <table>
+      <tr>
+        <td><button id="button1" onclick="addResult1()" class="button">Button 1</button></td>
+        <td><button id="button2" onclick="addResult2()" class="button">Button 2</button></td>
+      </tr>
+      <tr>
+        <td colspan="2"><button id="byPassButton" onclick="pass()" class="span-button">Button 3 (Spanning)</button></td>
+      </tr>
+    </table>
+  </div>
+</center>

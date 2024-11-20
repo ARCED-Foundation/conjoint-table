@@ -1,0 +1,8 @@
+{
+	"name" : "Conjoint Table",
+	"author" : "Dobility, ARCED Foundation",
+	"version": "3.0.0",
+	"supportedFieldTypes": ["text"],
+	"hideDefaultRequiredMessage": false,
+	"hideDefaultConstraintMessage": false
+}

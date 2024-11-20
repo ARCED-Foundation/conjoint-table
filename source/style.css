@@ -1,0 +1,78 @@
+.label {
+  /* add style rules here to change how the label appears */
+  margin: .75rem 0;
+}
+
+.hint {
+  /* add style rules here to change how the hint appears */
+  color: rgba(0,0,0,.65);
+  font-style: italic;
+  margin: .5rem 0;
+}
+
+.response {
+  /* add style rules here to change how the response appears */
+  border: 1px solid #047CC2;
+  box-sizing: border-box;
+  margin: .5rem 0;
+  padding: .5rem;
+  width: 100%;
+}
+
+.is-read-only .response {
+  /* this affects how the input appears when the field is marked read only */
+  background-color: rgba(0,0,0,.07);
+  border: 1px solid rgba(0,0,0,.3);
+  outline: none;
+}
+
+table.conjoint-table {
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+tr:nth-child(even) {
+  background-color: #0b325557;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #73B6EE;
+  
+  color: #1e242a;
+}
+
+.conjoint-table th, .conjoint-table td {
+  border: 1px solid black;
+  padding: 15px;
+  text-align: center;
+}
+
+.button {
+  background-color: #008CBA;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer; 
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.span-button {
+  background-color: #FE0000;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer; 
+  display: block;
+  font-size: 16px;
+  margin-top: 5px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
