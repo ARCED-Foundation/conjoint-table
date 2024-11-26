@@ -87,11 +87,12 @@ Let’s assume we want to conduct a conjoint experiment where "price" and "warra
 ### Randomization of Levels: {#randomization-of-levels:}
 
 * Randomize and organize  level1 and level2 values into ordered arrays with a pipe ‘|‘ delimiter based on attributes.
-*level1
+
+**level1**
 
 ![levelsarray1](extras/levelsarray1.png)
 
-*level2
+**level2**
 
 ![levelsarray2](extras/levelsarray2.png)
 
