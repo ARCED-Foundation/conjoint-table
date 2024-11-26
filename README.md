@@ -71,26 +71,26 @@ Let’s assume we want to conduct a conjoint experiment where "price" and "warra
 ### Create Separate Arrays with randomization and join them according to preference: 
 * Create a randomized array list for price and warranty.
 
-![levelsarray2](extras\pw.png)
+![levelsarray2](extras/pw.png)
 
 
 
 * Create another randomized array list for display, phone name, and payment.
 
-![levelsarray2](extras\pnbp.png)
+![levelsarray2](extras/pnbp.png)
 
 * Combine two arrays using the `join(delimiter, array1, array2)` function with `array1` containing the attributes (price, warranty)  to appear first.
 
-![attribute](extras\atttributes.png)
+![attribute](extras/atttributes.png)
 
 
 ### Randomization of Levels: {#randomization-of-levels:}
 
 * Randomize and organize  level1 and level2 values into ordered arrays with a pipe ‘|‘ delimiter based on attributes.
 >level1
-![levelsarray1](extras\levelsarray1.png)
+![levelsarray1](extras/levelsarray1.png)
 >level2
-![levelsarray2](extras\levelsarray2.png)
+![levelsarray2](extras/levelsarray2.png)
 
 ### Parameter Placement: 
 
