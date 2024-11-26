@@ -12,7 +12,7 @@ In SurveyCTO, the conjoint table plugin allows attribute order to be randomized 
 
 Additionally, this plug-in allows to add image as an attribute, i.e., add a product image for each of the products.
 
-[![Download now](extras/download-button.png)](extras/conjoint-table-bn.fieldplugin.zip)
+[![Download now](extras/download-button.png)](conjoint-table-bn.fieldplugin.zip)
 
 ## Default SurveyCTO feature support
 
@@ -47,8 +47,8 @@ This plug-in works as a table generator while the randomization and array constr
 
 # How to use the plug-in? 
 
-1. Download the [sample form](extras\conjoint-table+example+form.xlsx) from this repo and upload it to your SurveyCTO server.  
-2. Download the [conjoint-table-bn.fieldplugin.zip](extras\conjoint-table-bn.fieldplugin.zip) from this repo, and attach it to the test form on your SurveyCTO server.  
+1. Download the [sample form](conjoint-table+example+form.xlsx) from this repo and upload it to your SurveyCTO server.  
+2. Download the [conjoint-table-bn.fieldplugin.zip](conjoint-table-bn.fieldplugin.zip) from this repo, and attach it to the test form on your SurveyCTO server.  
 3. Make sure to provide the correct parameters (see below).  
    
 
