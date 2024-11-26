@@ -1,7 +1,7 @@
 # Conjoint table list
 
 
-![slot-lottery plug-in](extras/conjoint-plugin.png)
+![conjoint-table plug-in](extras/conjoint-plugin.png)
 
 
 # Description 
@@ -12,7 +12,7 @@ In SurveyCTO, the conjoint table plugin allows attribute order to be randomized 
 
 Additionally, this plug-in allows to add image as an attribute, i.e., add a product image for each of the products.
 
-[![Download now](extras/download-button.png)](conjoint-table-bn.fieldplugin.zip)
+[![Download now](extras/download-button.png)]([conjoint-table-bn.fieldplugin.zip](https://github.com/ARCED-Foundation/conjoint-table/blob/master/conjoint-table.fieldplugin.zip))
 
 ## Default SurveyCTO feature support
 
@@ -47,8 +47,8 @@ This plug-in works as a table generator while the randomization and array constr
 
 # How to use the plug-in? 
 
-1. Download the [sample form](conjoint-table+example+form.xlsx) from this repo and upload it to your SurveyCTO server.  
-2. Download the [conjoint-table-bn.fieldplugin.zip](conjoint-table-bn.fieldplugin.zip) from this repo, and attach it to the test form on your SurveyCTO server.  
+1. Download the [sample form](https://github.com/ARCED-Foundation/conjoint-table/tree/master/extras/form) from this repo and upload it to your SurveyCTO server.  
+2. Download the [conjoint-table-bn.fieldplugin.zip](https://github.com/ARCED-Foundation/conjoint-table/blob/master/conjoint-table.fieldplugin.zip) from this repo, and attach it to the test form on your SurveyCTO server.  
 3. Make sure to provide the correct parameters (see below).  
    
 
@@ -87,9 +87,12 @@ Let’s assume we want to conduct a conjoint experiment where "price" and "warra
 ### Randomization of Levels: {#randomization-of-levels:}
 
 * Randomize and organize  level1 and level2 values into ordered arrays with a pipe ‘|‘ delimiter based on attributes.
->level1
+*level1
+
 ![levelsarray1](extras/levelsarray1.png)
->level2
+
+*level2
+
 ![levelsarray2](extras/levelsarray2.png)
 
 ### Parameter Placement: 
@@ -198,27 +201,28 @@ Here is an example *appearance* for your *text* field that uses this field plug-
     `custom-conjoint-table-bn(attributes = ${attributes}, level1 = ${levels_array1}, level2 = ${levels_array2}, image1=${c1_mbl_img}, image2=${c2_mbl_img}, labels='Mobile 1, Mobile 2')`
 
 
->You can read more about how to use this plugin [here](link to the more information) (includes a downlodable step-by-step breakdown of using this field plug-in)
+You can read more about how to use this plugin [here](link to the more information) (includes a downlodable step-by-step breakdown of using this field plug-in)
+
 ## Author
-><u>[Mehrab Ali](https://github.com/mehrabali)
+<u>[Mehrab Ali](https://github.com/mehrabali)
 </u>
 
-><u>[ARCED Foundation](https://www.arced.foundation/)</u>
+<u>[ARCED Foundation](https://www.arced.foundation/)</u>
 
->Email: <u><mehrab.ali@arced.foundationn></u>
+Email: <u><mehrab.ali@arced.foundationn></u>
 
 
->><u>[Tasmin Binte Mamun (Pritha)](https://github.com/prithapritha)</u>
+<u>[Tasmin Binte Mamun (Pritha)](https://github.com/prithapritha)</u>
 
->><u>[ARCED Foundation](https://www.arced.foundation/)</u>
+<u>[ARCED Foundation](https://www.arced.foundation/)</u>
 
->>Email: <u><tasmin.pritha@arced.foundation></u>
+Email: <u><tasmin.pritha@arced.foundation></u>
 ### More resources 
->- **sample form**
-> You can find a form defination in this repo here: [form_name](link of the file)
->- **Developer documentation**
-> More instruction for developing and using field plug-ins can be found here: <u><https://github.com/surveycto/Field-plug-in-resources></u>
->- ** User documentation: How to get started using field plug-ins in your SurveyCTO form.
-><u><https://docs.surveycto.com/02-designing-forms/03-advanced-topics/06.using-field-plug-ins.html></u>
+* **sample form**
+You can find a form defination in this repo here: [form_name](link of the file)
+* **Developer documentation**
+More instruction for developing and using field plug-ins can be found here: <u><https://github.com/surveycto/Field-plug-in-resources></u>
+* **User documentation: How to get started using field plug-ins in your SurveyCTO form.**
+<u><https://docs.surveycto.com/02-designing-forms/03-advanced-topics/06.using-field-plug-ins.html></u>
 
 
