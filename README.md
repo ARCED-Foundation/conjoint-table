@@ -1,7 +1,7 @@
 # Conjoint table list
 
 
-![slot-lottery plug-in](Asset/conjoint-plugin.png)
+![slot-lottery plug-in](extras/conjoint-plugin.png)
 
 
 # Description 
@@ -12,7 +12,7 @@ In SurveyCTO, the conjoint table plugin allows attribute order to be randomized 
 
 Additionally, this plug-in allows to add image as an attribute, i.e., add a product image for each of the products.
 
-[![Download now](Asset/download-button.png)](Asset/conjoint-table-bn.fieldplugin.zip)
+[![Download now](extras/download-button.png)](extras/conjoint-table-bn.fieldplugin.zip)
 
 ## Default SurveyCTO feature support
 
@@ -47,8 +47,8 @@ This plug-in works as a table generator while the randomization and array constr
 
 # How to use the plug-in? 
 
-1. Download the [sample form](Asset\conjoint-table+example+form.xlsx) from this repo and upload it to your SurveyCTO server.  
-2. Download the [conjoint-table-bn.fieldplugin.zip](Asset\conjoint-table-bn.fieldplugin.zip) from this repo, and attach it to the test form on your SurveyCTO server.  
+1. Download the [sample form](extras\conjoint-table+example+form.xlsx) from this repo and upload it to your SurveyCTO server.  
+2. Download the [conjoint-table-bn.fieldplugin.zip](extras\conjoint-table-bn.fieldplugin.zip) from this repo, and attach it to the test form on your SurveyCTO server.  
 3. Make sure to provide the correct parameters (see below).  
    
 
@@ -71,26 +71,26 @@ Let’s assume we want to conduct a conjoint experiment where "price" and "warra
 ### Create Separate Arrays with randomization and join them according to preference: 
 * Create a randomized array list for price and warranty.
 
-![levelsarray2](Asset\pw.png)
+![levelsarray2](extras\pw.png)
 
 
 
 * Create another randomized array list for display, phone name, and payment.
 
-![levelsarray2](Asset\pnbp.png)
+![levelsarray2](extras\pnbp.png)
 
 * Combine two arrays using the `join(delimiter, array1, array2)` function with `array1` containing the attributes (price, warranty)  to appear first.
 
-![attribute](Asset\atttributes.png)
+![attribute](extras\atttributes.png)
 
 
 ### Randomization of Levels: {#randomization-of-levels:}
 
 * Randomize and organize  level1 and level2 values into ordered arrays with a pipe ‘|‘ delimiter based on attributes.
 >level1
-![levelsarray1](Asset\levelsarray1.png)
+![levelsarray1](extras\levelsarray1.png)
 >level2
-![levelsarray2](Asset\levelsarray2.png)
+![levelsarray2](extras\levelsarray2.png)
 
 ### Parameter Placement: 
 
