@@ -47,7 +47,7 @@ This plug-in works as a table generator while the randomization and array constr
 
 # How to use the plug-in? 
 
-1. Download the [sample form](https://github.com/ARCED-Foundation/conjoint-table/tree/master/extras/form) from this repo and upload it to your SurveyCTO server.  
+1. Download the [sample form](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2FARCED-Foundation%2Fconjoint-table%2Frefs%2Fheads%2Fmaster%2Fextras%2Fform%2Fconjoint-table%2520example%2520form.xlsx&wdOrigin=BROWSELINK) from this repo and upload it to your SurveyCTO server.  
 2. Download the [conjoint-table-bn.fieldplugin.zip](https://github.com/ARCED-Foundation/conjoint-table/blob/master/conjoint-table.fieldplugin.zip) from this repo, and attach it to the test form on your SurveyCTO server.  
 3. Make sure to provide the correct parameters (see below).  
    
