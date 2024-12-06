@@ -164,8 +164,6 @@ Here is an example *appearance* for your *text* field that uses this field plug-
     `custom-conjoint-table-bn(attributes = ${attributes}, level1 = ${levels_array1}, level2 = ${levels_array2}, image1=${c1_mbl_img}, image2=${c2_mbl_img}, labels='Mobile 1, Mobile 2')`
 
 
-You can read more about how to use this plugin [here](link to the more information) (includes a downlodable step-by-step breakdown of using this field plug-in)
-
 ## Author
 <u>[Mehrab Ali](https://github.com/mehrabali)
 </u>
