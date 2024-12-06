@@ -56,7 +56,7 @@ This plug-in works as a table generator while the randomization and array constr
 
 # Step to step guide for randomization with a survey example:  
 
-Let’s assume we want to conduct a conjoint experiment where "price" and "warranty" will be together in random order at the top of the list while allowing other attributes to appear in any order. The attribute list are given below:
+Let’s assume we want to conduct a conjoint experiment where we have set of attributes. The attribute list are given below:
 
 | Attributes | Values |
 | :---- | :---- |
@@ -68,23 +68,14 @@ Let’s assume we want to conduct a conjoint experiment where "price" and "warra
 
 ## Steps to-do:  
 
-### Create Separate Arrays with randomization and join them according to preference: 
-* Create a randomized array list for price and warranty.
+### Create Array for attributes: 
 
-![levelsarray2](extras/pw.png)
-
-
-
-* Create another randomized array list for display, phone name, and payment.
-
-![levelsarray2](extras/pnbp.png)
-
-* Combine two arrays using the `join(delimiter, array1, array2)` function with `array1` containing the attributes (price, warranty)  to appear first.
+* Attributes.
 
 ![attribute](extras/atttributes.png)
 
 
-### Randomization of Levels: {#randomization-of-levels:}
+### Randomization of Levels: 
 
 * Randomize and organize  level1 and level2 values into ordered arrays with a pipe ‘|‘ delimiter based on attributes.
 
@@ -100,47 +91,18 @@ Let’s assume we want to conduct a conjoint experiment where "price" and "warra
 
 * Place the resulting calculated attributes array along with level1 and level2 values array in the plugin parameters.
 
-## Detailed explanation  {#detailed-explanation}
+## Detailed explanation 
 
 
-
-| Type | Name | Calculation | Repeat count | Description |
-| :---- | :---- | :---- | :---- | :---- |
-| calculate | attributes\_mobile\_pw | “1,2” |  | Create a list with numbers that are delimited by ","  |
-| calculate | attributes\_mobile\_name\_pw | "Price,Warranty" |  | Create a list of attributes that should appear at the beginning and be separated by delimited "," |
-| Begin repeat | random\_draws\_pw |  | if(count-items(',', ${attributes\_ordered\_num\_pw})\>=count-items(',',${attributes\_mobile\_pw}), count(${rand\_attributes\_pw}), count(${random\_draws\_pw})+1) | Using the repeat count to control attribute placement helps decide which values should appear during each repetition. For example, if price is placed randomly in the ${attributesname\_ordered\_pw} calculation field on the first repetition, the repeat count would increase to 2, as warranty still needs to be placed. |
-| calculate | rand\_attributes\_pw | once(random()) |  | Generate random values |
-| calculate | randatt\_cat\_pw | int(\${rand\_attributes\_pw}\*count-items(',',${attributes\_mobile\_pw}))+1 |  | Randomly select either 1 or 2 items from the ${attributes\_mobile\_pw} attribute list. |
-| calculate | randatt\_name\_cat\_pw | item-at(',', ${attributes\_mobile\_name\_pw}, ${randatt\_cat\_pw}-1) |  | Randomly select either price or display items from the ${attributes\_mobile\_name\_pw} attribute list. |
-| End repeat | random\_draws\_attributes |  |  |  |
-| calculation | attributes\_ordered\_num\_pw | de-duplicate(',', join(',', ${randatt\_cat\_pw})) |  | Join the values from ${randatt\_cat\_pw} after each repetition while removing any duplicates. |
-| calculation | attributesname\_ordered\_pw | de-duplicate(',', join(',', ${randatt\_name\_cat\_pw})) |  | Join the values from ${randatt\_name\_cat\_pw} after each repetition while removing any duplicates.  |
-
-### Create another  array for display, phone name and payment 
+#### Create array for price, warranty, display, phone name and payment 
 
 | type | Name | Calculation | repeat count | Description |
 | :---- | :---- | :---- | :---- | :---- |
-| calculate | attributes\_mobile\_gs | “1,2,3” |  | Create a list with numbers that are delimited by ","  |
-| calculate | attributes\_mobile\_name\_gs | Display, phone name and payment" |  | Create a list of attributes that should appear after Price and Warranty in any order, and separated by delimited ‘,’ |
-| Begin repeat | random\_draws\_gs |  | if(count-items(',', ${attributes\_ordered\_num\_gs})\>=count-items(',',${attributes\_mobile\_gs}), count(${rand\_attributes\_gs}), count(${random\_draws\_gs})+1) | Using the repeat count to control attribute placement helps decide which values should appear during each repetition. For example, if payment and display is placed randomly in the ${attributesname\_ordered\_pw} calculation field on the first repetition, the repeat count would increase to 3, as the phone name still needs to be placed. |
-| calculate | rand\_attributes\_gs | once(random()) |  | Generate random values |
-| calculate | randatt\_cat\_gs | int(${rand\_attributes\_pw}\*count-items(',',\${attributes\_mobile\_pw}))+1 |  | Randomly select either 1,2 or 3 items from the \${attributes\_mobile\_gs} attribute list. |
-| calculate | randatt\_name\_cat\_gs | item-at(',', ${attributes\_mobile\_name\_gs}, ${randatt\_cat\_gs}-1) |  | Randomly select either phone name, payment or display items from the ${attributes\_mobile\_name\_gs} attribute list. |
-| end repeat | random\_draws\_attributes\_gs |  |  |  |
-| calculate | attributes\_ordered\_num\_gs | de-duplicate(',', join(',', ${randatt\_cat\_gs})) |  | Join the values from ${randatt\_cat\_gs}after each repetition while removing any duplicates. |
-| calculate | attributesname\_ordered\_gs | de-duplicate(',', join(',', ${randatt\_name\_cat\_gs})) |  | Join the values from ${randatt\_name\_cat\_gs} after each repetition while removing any duplicates.  |
+| calculate | attributes | Price, Warranty, Display, phone name and payment" |  | Create a list of attributes and separated by delimited ‘,’ |
 
-### Combine two arrays using the join function 
+## Randomization values array for the parameters level1 and level2 
 
-| name | calculation | description |
-| :---- | :---- | :---- |
-| attributes | join(',',${attributesname\_ordered\_pw},${attributesname\_ordered\_gs}) | Combine the two arrays ${attributesname\_ordered\_pw} (containing Price and Warranty) and ${attributesname\_ordered\_gs} (containing Display, Phone Name, and Payment) into a single list with Price and Warranty at the top, you can using the join function by placing ${attributesname\_ordered\_pw} first. |
-
-### 
-
-### Randomization values array for the parameters level1 and level2 
-
-### Phone name selection for both level1 and level2:
+#### Phone name selection for both level1 and level2:
 
 | name | Calculation | Description |
 | :---- | :---- | :---- |
@@ -148,7 +110,7 @@ Let’s assume we want to conduct a conjoint experiment where "price" and "warra
 | c1\_mobile | once(item-at(',',${mobile\_array},(int(count-items(',',${mobile\_array}))\*random()))) | For the level1, this will select one value at a time at random.  |
 | c2\_mobile | once(item-at(',',${mobile\_array},(int(count-items(',',${mobile\_array}))\*random()))) | For level2, this will select one value at a time at random.  |
 
-### Random selection for mobile price for both level1 and level2:  
+#### Random selection for mobile price for both level1 and level2:  
 
 | Name | calculation | description |
 | :---- | :---- | :---- |
@@ -156,14 +118,14 @@ Let’s assume we want to conduct a conjoint experiment where "price" and "warra
 | c1\_mobile\_price | once(item-at(',',${mobile\_price\_array},int(count-items(',',${mobile\_price\_array}))\*random())) | For the level1, this will select one number at random from the mobile\_price\_array. |
 | c2\_mobile\_price | once(item-at(',',${mobile\_price\_array},int(count-items(',',${mobile\_price\_array}))\*random())) | For level2, this will select one number at random from the mobile\_price\_array. |
 
-### Random selection for warranty based on mobile price.  
+#### Random selection for warranty based on mobile price.  
 
 | Name | calculation | description |
 | :---- | :---- | :---- |
 | c1\_warranty | "if((\${c1\_mobile\_price} \= ""5000 taka"" or \${c1\_mobile\_price} \= ""6000 taka"" or \${c1\_mobile\_price} \= ""6500 taka""), ""6 months, 8 months"", if((${c1\_mobile\_price} \= ""8000 taka"" or \${c1\_mobile\_price} \= ""12000 taka""), ""10 months, 1 year"", if((\${c1\_mobile\_price} \= ""15000 taka"" or \${c1\_mobile\_price} \= ""17000 taka""), ""1.5 year"", """"))) "  | Depending on the \${c1\_mobile\_price} warranty is calculated. For example: if mobile price value is 15000 taka the calculated value will be 1.5 year  |
 | c2\_warranty | "if((\${c2\_mobile\_price} \= ""5000 taka"" or \${c2\_mobile\_price} \= ""6000 taka"" or \${c2\_mobile\_price} \= ""6500 taka""), ""6 months, 8 months"", if((\${c2\_mobile\_price} \= ""8000 taka"" or \${c2\_mobile\_price} \= ""12000 taka""), ""10 months, 1 year"", if((\${c2\_mobile\_price} \= ""15000 taka"" or \${c2\_mobile\_price} \= ""17000 taka""), ""1.5 year"", """"))) "  | Depending on \${c2\_mobile\_price} item, calculate warranty. For example: if mobile price value is 15000 taka the calculated value will be 1.5 year  |
 
-### Random selection for Display for both level1 and level2:  
+#### Random selection for Display for both level1 and level2:  
 
 | Name | calculation | description |
 | :---- | :---- | :---- |
@@ -171,7 +133,7 @@ Let’s assume we want to conduct a conjoint experiment where "price" and "warra
 | c1\_mobile\_price | once(item-at(',',${c1\_display\_array},int(count-items(',',${c1\_display\_array})\*random()))) | For level1, this function selects one value at random from c1\_display\_array. |
 | c2\_mobile\_price | once(item-at(',',${c1\_display\_array},int(count-items(',',${c1\_display\_array})\*random()))) | For the level2, this function selects one value at random from c2\_display\_array. |
 
-### Construct level1 and level2 based on attributes values and join them 
+#### Construct level1 and level2 based on attributes values and join them 
 
 | type | name | calculation | repeat count | description |
 | :---- | :---- | :---- | :---- | :---- |
