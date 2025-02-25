@@ -180,7 +180,7 @@ Email: <u><mehrab.ali@arced.foundationn></u>
 Email: <u><tasmin.pritha@arced.foundation></u>
 ### More resources 
 * **sample form**
-You can find a form defination in this repo here: [sample form](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2FARCED-Foundation%2Fconjoint-table%2Frefs%2Fheads%2Fmaster%2Fextras%2Fform%2Fconjoint-table%2520example%2520form.xlsx&wdOrigin=BROWSELINK)
+You can find a form defination in this repo here: [sample form](extras/form/conjoint-table+example+form.xlsx)
 * **Developer documentation**
 More instruction for developing and using field plug-ins can be found here: <u><https://github.com/surveycto/Field-plug-in-resources></u>
 * **User documentation: How to get started using field plug-ins in your SurveyCTO form.**
