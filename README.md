@@ -12,7 +12,7 @@ In SurveyCTO, the conjoint table plugin allows attribute order to be randomized 
 
 Additionally, this plug-in allows to add image as an attribute, i.e., add a product image for each of the products.
 
-[![Download now](extras/download-button.png)](source/conjoint-table.fieldplugin.zip)
+[![Download now](extras/download-button.png)](conjoint-table.fieldplugin.zip)
 
 ## Default SurveyCTO feature support
 
